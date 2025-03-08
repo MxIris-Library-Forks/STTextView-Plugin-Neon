@@ -9,16 +9,16 @@ let package = Package(
     products: [
         .library(
             name: "STTextView-Plugin-Neon",
-            targets: ["NeonPlugin"]),
+            targets: ["STPluginNeon"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/krzyzanowskim/STTextView", branch: "main"),
+        .package(url: "https://github.com/krzyzanowskim/STTextView", from: "2.0.0"),
         .package(url: "https://github.com/ChimeHQ/Neon", from: "0.6.0"),
-        .package(url: "https://github.com/ChimeHQ/SwiftTreeSitter", from: "0.8.0")
+        .package(url: "https://github.com/ChimeHQ/SwiftTreeSitter", from: "0.9.0")
     ],
     targets: [
         .target(
-            name: "NeonPlugin",
+            name: "STPluginNeon",
             dependencies: [
                 .product(name: "STTextView", package: "STTextView"),
                 .product(name: "Neon", package: "Neon"),
